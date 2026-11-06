@@ -5,7 +5,10 @@
   "description": "Square-foot priced banner & vinyl sticker product page with editable materials and server-verified cart pricing.",
   "scripts": {
     "start": "node server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "build": "node scripts/build-demo.js"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

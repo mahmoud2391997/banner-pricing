@@ -30,15 +30,7 @@ jobs:
           node-version: 20
       - run: npm test
       - name: Build static demo
-        run: |
-          mkdir -p _site
-          cp -R public/. _site/
-          rm -f _site/admin.html _site/assets/admin.js
-          node -e '
-            const c = require("./config/pricing.json");
-            c.cart = Object.assign({}, c.cart, { method: "demo" });
-            require("fs").writeFileSync("_site/pricing.json", JSON.stringify(c, null, 2));
-          '
+        run: node scripts/build-demo.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
