@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Pricing Settings</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .admin { max-width: 860px; margin: 0 auto; padding: 32px 16px; display: grid; gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 14px; }
+    .card h2 { margin: 0; font-size: 18px; }
+    .row { display: grid; grid-template-columns: 1fr 140px 90px 44px; gap: 10px; align-items: center; }
+    .row--head { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .row label.active { display: flex; gap: 6px; align-items: center; font-size: 14px; }
+    .row input[type=checkbox] { width: 18px; min-height: 18px; }
+    .remove { background: transparent; border: 1px solid var(--line); border-radius: 8px; color: var(--error); min-height: 44px; cursor: pointer; font-size: 18px; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .status { font-size: 14px; }
+    .status.ok { color: #1b8a3a; }
+    .status.err { color: var(--error); }
+    @media (max-width: 560px) {
+      .row { grid-template-columns: 1fr 1fr; }
+      .row--head { display: none; }
+      .row .name { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="admin">
+    <h1>Pricing settings</h1>
+    <p class="lede" style="margin:0">Changes apply to the product page and the cart's price check as soon as you save.</p>
+
+    <section class="card">
+      <h2>General</h2>
+      <div class="grid2">
+        <label class="field"><span>Product name</span><input id="productName"></label>
+        <label class="field"><span>Setup fee ($ per order line)</span><input id="setupFee" type="number" min="0" step="0.01"></label>
+        <label class="field"><span>Minimum side (ft)</span><input id="minFt" type="number" min="0" step="0.25"></label>
+        <label class="field"><span>Max width (ft)</span><input id="maxWidthFt" type="number" min="0" step="0.5"></label>
+        <label class="field"><span>Max height (ft)</span><input id="maxHeightFt" type="number" min="0" step="0.5"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Materials</h2>
+      <div class="row row--head"><span>Name</span><span>$ / sq ft</span><span>Show</span><span></span></div>
+      <div id="materials" style="display:grid;gap:10px"></div>
+      <div><button type="button" class="btn btn--ghost" id="addMaterial">+ Add material</button></div>
+    </section>
+
+    <section class="card">
+      <label class="field"><span>Admin token</span><input id="token" type="password" autocomplete="current-password" placeholder="Set by ADMIN_TOKEN on the server"></label>
+      <div class="actions">
+        <button type="button" class="btn" id="save">Save changes</button>
+        <a href="/" target="_blank" rel="noopener">View product page ↗</a>
+        <span class="status" id="status" role="status"></span>
+      </div>
+    </section>
+  </main>
+  <script src="assets/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "productName": "Custom Banners & Vinyl Stickers",
+  "currency": "USD",
+  "locale": "en-US",
+  "setupFee": 15,
+  "limits": {
+    "minFt": 0.5,
+    "maxWidthFt": 16,
+    "maxHeightFt": 100
+  },
+  "materials": [
+    { "id": "vinyl-13oz", "name": "13 oz Vinyl Banner", "ratePerSqFt": 3.5, "active": true },
+    { "id": "vinyl-15oz", "name": "15 oz Heavy-Duty Vinyl Banner", "ratePerSqFt": 4.25, "active": true },
+    { "id": "mesh", "name": "Mesh Banner (wind-resistant)", "ratePerSqFt": 4.75, "active": true },
+    { "id": "sticker-gloss", "name": "Gloss Vinyl Sticker", "ratePerSqFt": 6, "active": true },
+    { "id": "sticker-matte", "name": "Matte Vinyl Sticker", "ratePerSqFt": 6.5, "active": true }
+  ],
+  "cart": {
+    "method": "form-post",
+    "addUrl": "/cart/add",
+    "redirectTo": "/cart",
+    "productId": "custom-banner-sqft",
+    "fieldNames": {}
+  }
+}

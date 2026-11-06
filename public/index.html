@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Banners &amp; Vinyl Stickers</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-config="pricing.json">
+  <main class="product">
+    <section class="product__media" aria-hidden="true">
+      <div class="preview" id="preview">
+        <div class="preview__shape" id="previewShape"><span id="previewLabel">Your size</span></div>
+      </div>
+      <p class="preview__note">Preview drawn to your proportions</p>
+    </section>
+
+    <form class="product__panel" id="productForm" novalidate>
+      <p class="eyebrow">Priced by the square foot</p>
+      <h1 id="productName">Custom Banners &amp; Vinyl Stickers</h1>
+      <p class="lede">Type your size in feet, pick a material, and your price updates instantly.</p>
+
+      <fieldset class="dims">
+        <legend>Size (feet)</legend>
+        <div class="dims__row">
+          <label class="field">
+            <span>Width</span>
+            <input id="width" name="width" type="number" inputmode="decimal" step="0.25" placeholder="e.g. 4" required>
+          </label>
+          <span class="dims__x" aria-hidden="true">×</span>
+          <label class="field">
+            <span>Height</span>
+            <input id="height" name="height" type="number" inputmode="decimal" step="0.25" placeholder="e.g. 6" required>
+          </label>
+        </div>
+        <p class="hint" id="limitsHint"></p>
+      </fieldset>
+
+      <label class="field">
+        <span>Material</span>
+        <select id="material" name="material" required></select>
+      </label>
+
+      <dl class="summary" aria-live="polite">
+        <div><dt>Total area</dt><dd id="sumSqft">—</dd></div>
+        <div><dt>Rate</dt><dd id="sumRate">—</dd></div>
+        <div><dt>Material</dt><dd id="sumMaterial">—</dd></div>
+        <div><dt>Setup fee</dt><dd id="sumSetup">—</dd></div>
+        <div class="summary__total"><dt>Price</dt><dd id="sumTotal">—</dd></div>
+      </dl>
+
+      <p class="errors" id="errors" role="alert"></p>
+      <button type="submit" class="btn" id="addBtn">Add to cart</button>
+      <p class="notice" id="notice" role="status"></p>
+    </form>
+  </main>
+
+  <script src="assets/pricing-core.js"></script>
+  <script src="assets/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "banner-pricing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Square-foot priced banner & vinyl sticker product page with editable materials and server-verified cart pricing.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}
